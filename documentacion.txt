@@ -1,1 +1,40 @@
+tssdcs.sh generates: 
+	folders
+		/coordir (Check) movies in .xyz 
 
+		/tsdirLL_NAME geometries in file .out ( standar output of mopac job )
+
+	tsscds.log: General information: methods, trajectories information of accepted Optimazed Transition states structures (TS) 
+
+	to check : EF algorithm was unable to optimaze a TS: 
+	note: The Eigenvector Following routine [7] is the default geometry optimization method (      http://openmopac.net/manual/Eigenfollowing.html) 
+
+	bbfs.dat (?)
+
+	bbfs.out (to check): Number of paths(?) and atoms involved
+
+	NAME_ref.xyz = same input geometry 
+
+	NAME_freq.out: standar output file of mopac (TO CHECK : analytical hessian calculattion, visualize normal modes) 
+
+	thdis = (to check = reference information for change in adjacent matrix) 
+
+tsll_view.sh : TUTORIAL: 
+
+tsscds_paralell (NATALIA ___??) 
+
+irc.sh:
+	folder
+	tssdcs_paralel-logs/ (????)
+	creates in /tsdirLL_NAME:
+		folder:
+			/backup = initial geometries in file .out ( standar output of mopac job )
+			/IRC = ts(#n)_NAME_ircf.mop(forward direction) and ts(#n)_NAME_ircr.mop (reverse direction)(#n is the number of the transition state)
+				ts(#n)_NAME_irc.mop is and standar input mopac file:
+			/MINs = min0.mop , min0.out ( result) min.db (?) 
+			/Tss= ts1_NA_thermo.mop ( contains FORce keyword : The Hessian, that is the matrix in millidynes per Ångstrom) of second derivatives of the energy 
+ 				with respect to displacements of all pairs of atoms in x, y, and z directions, is calculated. On diagonalization this gives the force constants for the molecule.
+
+		inputs.db (???) 
+
+min.sh : error//: path/TSs/*_thermo.out no such file or directory ( MOPAC error : 
